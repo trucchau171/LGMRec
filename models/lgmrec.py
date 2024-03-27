@@ -43,6 +43,7 @@ class LGMRec(GeneralRecommender):
         self.drop = nn.Dropout(p=1-self.keep_rate[0])
 
         # load item modal features and define hyperedges embeddings
+        print(config)
         if self.v_feat is not None:
             print(self.v_feat, self.v_feat.shape)
             print(self.feat_embed_dim, self.hyper_num)
