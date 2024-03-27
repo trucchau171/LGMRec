@@ -44,6 +44,8 @@ class LGMRec(GeneralRecommender):
 
         # load item modal features and define hyperedges embeddings
         if self.v_feat is not None:
+            print(v_feat, v_feat.shape)
+            print(feat_embed_dim, hyper_num)
             self.image_embedding = nn.Embedding.from_pretrained(self.v_feat, freeze=True)
             self.item_image_trs = nn.Parameter(nn.init.xavier_uniform_(torch.zeros(self.v_feat.shape[1], self.feat_embed_dim)))
             self.v_hyper = nn.Parameter(nn.init.xavier_uniform_(torch.zeros(self.v_feat.shape[1], self.hyper_num)))
