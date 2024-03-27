@@ -40,7 +40,7 @@ class LGMRec(GeneralRecommender):
         nn.init.xavier_uniform_(self.user_embedding.weight)
         nn.init.xavier_uniform_(self.item_id_embedding.weight)
 
-        self.drop = nn.Dropout(p=1-self.keep_rate[0])
+        self.drop = nn.Dropout(p=1-self.keep_rate)
 
         # load item modal features and define hyperedges embeddings
         print(config)
